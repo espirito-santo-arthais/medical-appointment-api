@@ -22,6 +22,7 @@ model Appointment {
 model Doctor {
   id           Int            @id @default(autoincrement())
   name         String
+  email        String         @unique
   crm          String         @unique
   specialty    Specialty      @relation(fields: [specialtyId], references: [id])
   specialtyId  Int
